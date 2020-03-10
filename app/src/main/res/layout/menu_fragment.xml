@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Button
+        android:id="@+id/predefinedAnimation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_gap"
+        android:layout_marginTop="@dimen/small_gap"
+        android:layout_marginEnd="@dimen/default_gap"
+        android:layout_marginBottom="@dimen/small_gap"
+        android:text="Predefined animation"
+        app:layout_constraintBottom_toTopOf="@+id/flingAnimation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/flingAnimation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_gap"
+        android:layout_marginTop="@dimen/small_gap"
+        android:layout_marginEnd="@dimen/default_gap"
+        android:layout_marginBottom="@dimen/small_gap"
+        android:text="Fling animation"
+        app:layout_constraintBottom_toTopOf="@+id/textureChange"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/predefinedAnimation" />
+
+    <Button
+        android:id="@+id/textureChange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_gap"
+        android:layout_marginTop="@dimen/small_gap"
+        android:layout_marginEnd="@dimen/default_gap"
+        android:layout_marginBottom="@dimen/small_gap"
+        android:text="Change texture"
+        app:layout_constraintBottom_toTopOf="@+id/boneConnection"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/flingAnimation" />
+
+    <Button
+        android:id="@+id/boneConnection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_gap"
+        android:layout_marginTop="@dimen/small_gap"
+        android:layout_marginEnd="@dimen/default_gap"
+        android:layout_marginBottom="@dimen/small_gap"
+        android:text="Bone connection"
+        app:layout_constraintBottom_toTopOf="@+id/moveCamera"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textureChange" />
+
+    <Button
+        android:id="@+id/moveCamera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_gap"
+        android:layout_marginTop="@dimen/small_gap"
+        android:layout_marginEnd="@dimen/default_gap"
+        android:layout_marginBottom="@dimen/small_gap"
+        android:text="Move camera"
+        app:layout_constraintBottom_toTopOf="@+id/lights"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boneConnection" />
+
+    <Button
+        android:id="@+id/lights"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/default_gap"
+        android:layout_marginTop="@dimen/small_gap"
+        android:layout_marginEnd="@dimen/default_gap"
+        android:layout_marginBottom="@dimen/small_gap"
+        android:text="Lights"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/moveCamera" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

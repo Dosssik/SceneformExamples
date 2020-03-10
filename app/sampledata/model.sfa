@@ -1,0 +1,87 @@
+{
+  animations: [
+    {
+      clips: [
+        {
+          name: 'Take 001',
+          runtime_name: 'model',
+        },
+      ],
+      path: 'sampledata/model.fbx',
+    },
+  ],
+  materials: [
+    {
+      name: 'phongE2',
+      parameters: [
+        {
+          baseColor: [
+            1,
+            1,
+            1,
+            1,
+          ],
+        },
+        {
+          baseColorMap: 'R1_Color',
+        },
+        {
+          normalMap: null,
+        },
+        {
+          interpolatedColor: null,
+        },
+        {
+          metallic: 0,
+        },
+        {
+          metallicMap: null,
+        },
+        {
+          roughness: 1,
+        },
+        {
+          roughnessMap: null,
+        },
+        {
+          opacity: null,
+        },
+      ],
+      source: 'build/sceneform_sdk/default_materials/fbx_material.sfm',
+    },
+  ],
+  model: {
+    attributes: [
+      'Position',
+      'TexCoord',
+      'Orientation',
+      'BoneIndices',
+      'BoneWeights',
+    ],
+    collision: {},
+    file: 'sampledata/model.fbx',
+    name: 'model',
+    recenter: 'root',
+  },
+  samplers: [
+    {
+      file: 'sampledata/model.fbm/R1_normal.jpg',
+      name: 'R1_normal',
+      params: {
+        usage_type: 'Data',
+      },
+      pipeline_name: 'model.fbm/R1_normal.jpg',
+    },
+    {
+      file: 'sampledata/model.fbm/R1_spacular.jpg',
+      name: 'R1_spacular',
+      pipeline_name: 'model.fbm/R1_spacular.jpg',
+    },
+    {
+      file: 'sampledata/model.fbm/R1_Color.jpg',
+      name: 'R1_Color',
+      pipeline_name: 'model.fbm/R1_Color.jpg',
+    },
+  ],
+  version: '0.54:2',
+}
