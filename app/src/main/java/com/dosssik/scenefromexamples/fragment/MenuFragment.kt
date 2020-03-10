@@ -17,7 +17,7 @@ class MenuFragment : Fragment(R.layout.menu_fragment) {
         super.onViewCreated(view, savedInstanceState)
 
         predefinedAnimation.setOnClickListener {
-            showFragment(PredefineAnimationFragment())
+            showFragment(PredefinedAnimationFragment())
         }
         flingAnimation.setOnClickListener {
             showFragment(FlingAnimationFragment())

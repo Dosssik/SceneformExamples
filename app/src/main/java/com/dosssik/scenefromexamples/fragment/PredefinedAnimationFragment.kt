@@ -4,10 +4,10 @@ import androidx.core.animation.doOnEnd
 import com.dosssik.scenefromexamples.R
 import com.google.ar.sceneform.SceneView
 import com.google.ar.sceneform.animation.ModelAnimator
-import kotlinx.android.synthetic.main.predefine_animation_fragment_layout.sceneView
-import kotlinx.android.synthetic.main.predefine_animation_fragment_layout.startAnimation
+import kotlinx.android.synthetic.main.predefined_animation_fragment_layout.sceneView
+import kotlinx.android.synthetic.main.predefined_animation_fragment_layout.startAnimation
 
-class PredefineAnimationFragment: BaseSceneformFragment(R.layout.predefine_animation_fragment_layout) {
+class PredefinedAnimationFragment: BaseSceneformFragment(R.layout.predefined_animation_fragment_layout) {
 
     override fun getSceneView(): SceneView = sceneView
 
@@ -21,7 +21,6 @@ class PredefineAnimationFragment: BaseSceneformFragment(R.layout.predefine_anima
     private fun onStartAnimationClicked() {
         startAnimation.isEnabled = false
         val animationNumber = (0 until renderable.animationDataCount).random()
-
 
         val animationData = renderable.getAnimationData(animationNumber)
         val animator = ModelAnimator(animationData, renderable)

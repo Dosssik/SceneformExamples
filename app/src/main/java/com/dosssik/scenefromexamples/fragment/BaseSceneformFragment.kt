@@ -15,6 +15,8 @@ import java.io.File
 
 private const val MODEL_SCALE = 8F
 private const val CAMERA_FOV = 60F
+private const val MODEL_SHIFT_Y = 0.5f
+private const val PATH_TO_MODEL = "//android_asset/model.sfb"
 
 abstract class BaseSceneformFragment(@LayoutRes layoutResId: Int) : Fragment(layoutResId) {
 
@@ -47,7 +49,7 @@ abstract class BaseSceneformFragment(@LayoutRes layoutResId: Int) : Fragment(lay
     }
 
     private fun loadRenderable() {
-        val uri = Uri.fromFile(File("//android_asset/model.sfb"))
+        val uri = Uri.fromFile(File(PATH_TO_MODEL))
         ModelRenderable.builder()
             .setSource(activity, uri)
             .build()
@@ -67,7 +69,7 @@ abstract class BaseSceneformFragment(@LayoutRes layoutResId: Int) : Fragment(lay
         camera.verticalFovDegrees = CAMERA_FOV
         val ray = Ray(camera.worldPosition, camera.forward)
         val position = ray.getPoint(1.0f)
-        position.y -= 0.5f
+        position.y -= MODEL_SHIFT_Y
 
         robotNode.setParent(getSceneView().scene)
         robotNode.worldPosition = position

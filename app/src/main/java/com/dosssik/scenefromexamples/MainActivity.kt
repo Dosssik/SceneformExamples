@@ -13,7 +13,6 @@ class MainActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             showFragment(MenuFragment())
-
         }
     }
 

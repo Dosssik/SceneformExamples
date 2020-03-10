@@ -13,9 +13,14 @@ import kotlinx.android.synthetic.main.bone_connection_fragment.showOrHideConnect
 import kotlinx.android.synthetic.main.bone_connection_fragment.startAnimation
 import java.io.File
 
+private const val BONE_NAME = "joint12"
+private const val HAT_SCALE = 0.25F
+private const val HAT_SHIFT_Y = 0.08F
+private const val PATH_TO_HAT = "//android_asset/baseball-cap.sfb"
+
 class BoneConnectionFragment: BaseSceneformFragment(R.layout.bone_connection_fragment) {
 
-    val hatNode = Node()
+    private val hatNode = Node()
 
     override fun getSceneView(): SceneView = sceneView
 
@@ -24,7 +29,7 @@ class BoneConnectionFragment: BaseSceneformFragment(R.layout.bone_connection_fra
     }
 
     private fun loadHat() {
-        val uri = Uri.fromFile(File("//android_asset/baseball-cap.sfb"))
+        val uri = Uri.fromFile(File(PATH_TO_HAT))
         ModelRenderable.builder()
             .setSource(activity, uri)
             .build()
@@ -41,12 +46,12 @@ class BoneConnectionFragment: BaseSceneformFragment(R.layout.bone_connection_fra
     private fun connectHatToRobot(renderable: ModelRenderable) {
         val boneNode = Node()
         boneNode.setParent(robotNode)
-        robotNode.setBoneAttachment("joint12", boneNode)
+        robotNode.setBoneAttachment(BONE_NAME, boneNode)
         hatNode.setParent(boneNode)
         hatNode.renderable = renderable
-        hatNode.worldScale = Vector3(0.25F, 0.25F, 0.25F)
+        hatNode.worldScale = Vector3(HAT_SCALE, HAT_SCALE, HAT_SCALE)
         val position = hatNode.worldPosition
-        position.y -= 0.08F
+        position.y -= HAT_SHIFT_Y
         hatNode.worldPosition = position
     }
 

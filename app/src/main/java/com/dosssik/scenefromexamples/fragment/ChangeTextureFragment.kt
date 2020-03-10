@@ -6,6 +6,8 @@ import com.google.ar.sceneform.rendering.Texture
 import kotlinx.android.synthetic.main.change_texture_fragment.changeTextureButton
 import kotlinx.android.synthetic.main.change_texture_fragment.sceneView
 
+private const val TEXTURE_NAME = "baseColorMap"
+
 class ChangeTextureFragment: BaseSceneformFragment(R.layout.change_texture_fragment) {
 
     override fun getSceneView(): SceneView = sceneView
@@ -32,7 +34,7 @@ class ChangeTextureFragment: BaseSceneformFragment(R.layout.change_texture_fragm
             .build()
             .thenAccept { texture ->
                 val material = renderable.getMaterial(0)
-                material.setTexture("baseColorMap", texture)
+                material.setTexture(TEXTURE_NAME, texture)
                 changeTextureButton.isEnabled = true
             }
     }
